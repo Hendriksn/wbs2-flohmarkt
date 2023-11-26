@@ -32,9 +32,9 @@ Eine Web-Applikation für einen online Flohmarkt.
 ## Run Application
 
 1. Navigate to [wbs2_online-flohmarkt/frontend]().
-   1. Start the frontend with `npm run start`.
+   1. Start the frontend with `npm run watch`.
 2. Navigate to [wbs2_online-flohmarkt/backend]().
-   1. Start the server with `npm run watch`.
+   1. Start the server with `npm run start`.
 
 ## Usage
 
