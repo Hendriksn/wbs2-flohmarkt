@@ -1,0 +1,107 @@
+<section class="h-100 gradient-custom-2">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card profileBackground">
+
+          <!-- Profil picture with edit button -->
+          <div class="rounded-top text-white d-flex flex-row profile-head">
+            <div class="ms-4 mt-5 d-flex flex-column">
+              <!--
+              <div class="genericInitials mt-4 mb-2">{{ user[0].givenName.charAt(0) + user[0].familyName.charAt(0) }}</div>
+              <img src="{{'http://localhost:3000/upload/pb/'+user[0].picture}}">
+              -->
+              <img id="profileImage" src="{{'http://localhost:3000/upload/pb/'+user[0].picture}}"
+                   alt="Generic placeholder image"
+                   class="img-fluid img-thumbnail mt-4 mb-2 profile-picture-width profile-picture-index">
+
+              <!-- Edit profile: only show button if user is authorized -->
+              <button *ngIf="currentUserID === currentProfileId"
+                      (click)="editProfileButtonClicked()"
+                      type="button" class="btn btn-secondary profile-picture-index"
+                      data-mdb-ripple-color="secondary">
+                Profil Bearbeiten
+              </button>
+              <!-- delete profile: only show button if user is authorized -->
+              <button *ngIf="currentUserID === currentProfileId"
+                      (click)="deleteUser()"
+                      type="button" class="btn btn-secondary profile-picture-index"
+                      data-mdb-ripple-color="dark">
+                Profil löschen
+              </button>
+
+
+              <!-- Add to favorite: only display if user is logged-in, and the id of logged-in user is different the visited profile-id -->
+              <button *ngIf="user[0].id != currentProfileId"
+                      (click)="addFavoriteUser()"
+                      type="button" class="btn btn-secondary profile-picture-index"
+                      data-mdb-ripple-color="dark">
+                Favorit
+              </button>
+            </div>
+
+
+            <!-- User Information -->
+            <div class="ms-3" style="margin-top: 130px;">
+              <h5>{{ user[0].givenName }} {{ user[0].familyName }}</h5>
+              <p *ngIf="user[0].role === 'seller' ">Meine Standnummer: {{ user[0].id + 103 }}</p>
+            </div>
+          </div>
+          <div class="p-4 text-black">
+            <div class="d-flex justify-content-end text-center py-1">
+              <div *ngIf="user[0].role  === 'seller' ">
+                <p class="mb-1 h5">Verkäufer*in</p>
+                <fa-icon [icon]="faCashRegister"></fa-icon>
+              </div>
+              <div *ngIf="user[0].role  === 'buyer' ">
+                <p class="mb-1 h5">Interessent*in</p>
+                <fa-icon [icon]="faBasketShopping"></fa-icon>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- If Seller than the article section will be shown -->
+          <div *ngIf="user[0].role  === 'seller' " class="">
+            <div style="margin-top: 40px" class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0">Zuletzt hinzugefügt:</p>
+              <!-- redirection to the add-product site -->
+              <!-- The *ngIf needs to evaluate if user is authorized to do this -->
+              <p *ngIf="user[0].role  === 'seller' && user[0].id === currentProfileId" class="mb-0">
+                <a [routerLink]="['/addproduct']" class="text-muted">Artikel hinzufügen</a>
+              </p>
+              <!-- redirection to the overview site where all articles of given seller are shown -->
+              <!-- [routerLink]="['/all-products/users/:currentProfileId'] to fetch data from the currently displayed user-profile -->
+              <p *ngIf="user[0].role  === 'seller' && user[0].id === currentProfileId" class="mb-0"><a
+                [routerLink]="['/all-products']" class="text-muted">Alle anzeigen</a></p>
+            </div>
+            <!-- Preview, falls eingestellte Artikel vorhanden, ansonsten leer -->
+            <!-- Liste der zuletzt angelegten Artikel, später aus DB abrufen -->
+            <div *ngIf="user[0].role == 'seller'">
+              <div style="margin: 0px" class="card-body">
+                <div class="row">
+                    <div class="col-6" *ngFor="let product of products">
+                      <app-article [articleID]=product.id></app-article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- If Buyer than the favorite section will be shown -->
+          <div *ngIf="user[0].role  === 'buyer' " class="card-body p-4 text-black">
+            <div class="d-flex justify-content-center align-items-center mb-4">
+              <p class="text-center">
+                <span>
+                  <a [routerLink]="['/favorite-articles']" class="text-muted">Favorisierte Artikel</a>
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

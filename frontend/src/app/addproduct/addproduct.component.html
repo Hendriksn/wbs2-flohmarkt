@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-md-12 mb-4">
+    <div class="card mb-4">
+      <div class="card-header py-3" style="background-color: #CC6212; color: white">
+        <h5 style="align: center" class="mb-0">Anzeigedetails</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="UploadProduct">
+          <!-- Text input -->
+          <!-- 2 column grid layout with text inputs for the first and last names -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input formControlName="name" type="text" id="form7Example1" class="form-control" />
+                <label class="form-label" for="form7Example1">Titel des Produkts</label>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-outline">
+                <div class="form-outline">
+                  <input formControlName="price" type="text" id="form7Example2" class="form-control" />
+                  <label class="form-label" for="form7Example1">Preis</label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Text input -->
+          <div class="form-outline mb-4">
+            <select formControlName="category" id="form7Example."class="form-control">
+              <option>Antiqutäten</option>
+              <option>Bücher</option>
+              <option>Elektronik</option>
+              <option>Haustiere</option>
+              <option>Hobbyartikel</option>
+              <option>Kinder</option>
+              <option>Klamotten</option>
+              <option>Musik & Filme</option>
+              <option>Sammlerstücke</option>
+              <option>Schmuck</option>
+              <option>Verschenken</option>
+              <option>+18</option>
+            </select>
+            <label class="form-label" for="form7Example1">Wähle eine Kategorie</label>
+          </div>
+
+
+          <!-- Message input -->
+          <div class="form-outline mb-4">
+            <textarea formControlName="description" class="form-control" id="form7Example7" rows="4"></textarea>
+            <label class="form-label" for="form7Example7">Produktbeschreibung</label>
+          </div>
+
+          <!-- Location -->
+          <div class="row mb-4">
+            <div class="col">
+              <div class="form-outline">
+                <input formControlName="location" type="text" id="form7Example21" class="form-control" />
+                <label class="form-label" for="form7Example1">Standort</label>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-outline mb-4">
+          <label for="formFileMultiple" class="form-label">Lade Produktbilder hoch</label>
+          <input (change)="handleFileInput($event)" [(ngModel)]="pic" class="form-control" type="file" id="formFileMultiple" multiple />
+          </div>
+
+
+          <!-- Checkbox -->
+          <div class="form-check d-flex justify-content-center mb-2">
+            <button (click)="clickedCreate()" type="button" class="btn btn-secondary btn-lg btn-block">
+              Produkt Online stellen
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

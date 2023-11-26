@@ -1,0 +1,420 @@
+
+
+<div class="row gx-5">
+  <div class="col mb-3">
+
+    <div class="adminheader " style="height: 10rem; background: #154734; width: 1205px">
+    </div>
+    <p class="ueberschriftadmin">Admin Dashboard</p>
+
+    <p></p>
+    <p></p>
+
+    <div class="container px-5 mb-5 font">
+      <div class="row gx-5 mb-1">
+        <div class="col">
+          <span class="title">Gruppen:</span>
+          <!-- Gruppenverwaltung: André --->
+        </div>
+        <!-- Supportanfragen: Johanna -->
+        <div class="col">
+          <span class="title">Supportanfragen:</span>
+        </div>
+      </div>
+
+      <div class="row gx-5">
+        <div class="col mb-3">
+          <div class=" " style="height: 20rem; background: #DFE7DB">
+            <!-- Gruppenverwaltung: André --->
+            <div class="scrollleiste frame p-2" style=" height: 14rem; margin: auto; width: 600px">
+              <table id="renderGroupList">
+              </table>
+            </div>
+            <div style="margin: auto; ">
+              <input id="groupInput" class="kategorieInput">
+              <p class="kategorieText" style="color: black">Neue Gruppe hinzufügen:</p>
+            </div>
+
+          </div>
+          <p></p>
+
+          <!-- Kategorie Verwaltung: Lara --->
+          <span class="title">Kategorien:</span>
+          <div class=" " style="height: 20rem; background: #DFE7DB">
+            <div class="scrollleiste frame p-2" style=" height: 14rem; margin: auto; width: 600px"  >
+              <table id="renderKategorieList">
+              </table>
+            </div>
+            <div style="margin: auto; ">
+              <input id="kategorieInput" class="kategorieInput" >
+              <p class="kategorieText" style="color: black">Neue Kategorie hinzufügen:</p>
+            </div>
+
+
+          </div>
+
+        </div>
+
+        <div class="col">
+          <div class="frame p-2 scrollleiste" id="admin-support" style="height: 40rem">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Accounts: Talia-->
+
+    <div class="container">
+      <div class="row pt-3">
+        <div class="col" id="messagesAccounts">
+        </div>
+      </div>
+    </div>
+
+    <p class="title">Accounts:</p>
+    <div class="row">
+      <div class="col-lg-2 col-md-2">
+
+      </div>
+
+      <!--    <div class="col-1">
+              <img id="greenBeitraege" class="grennscreen" src="bilder/aec1a5.png">
+          </div>-->
+      <div class="col-lg-4 col-md-4" style="background-color: #aec1a5; padding-top: 5px;">
+        <form id="formAccounts">
+          <input class="input" type="search" id="querAccounts" name="q" placeholder="Suche">
+        </form>
+      </div>
+
+      <div class="col-lg-2 col-md-2" style="background-color: #aec1a5">
+        <div class="dropdownBeitrag1">
+          <button class="btn dropdown-toggle" style="color: black" type="button" id="dropdownMenuButtonBeitraege2"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Alphabetisch Sortiert
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonBeitraege">
+            <a class="dropdown-item" href="#">von A-z</a>
+            <a class="dropdown-item" href="#">von Z-a</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-2" style="background-color: #aec1a5">
+        <div class="dropdownBeitrag2">
+          <button class="btn dropdown-toggle" style="color: black;" type="button" id="dropdownMenuButtonBeitraege3"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nach ID Sortiert
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonBeitraege1">
+            <a class="dropdown-item" href="#">Aufsteigend</a>
+            <a class="dropdown-item" href="#">Absteigend</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+      <div class="col-lg-8 col-md-8 col-sm-8" style="background-color: #aec1a5">
+        <div class="scrollleiste frame p-2" style=" height: 15rem; width: 100%;">
+          <table class="tableBeiraege" style="width: 100%;">
+            <thead class="thead-light" style="color: black">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nutzer Name</th>
+              <th scope="col">Art</th>
+              <th scope="col">Ort</th>
+            </tr>
+            </thead>
+            <tbody id="user-table-body">
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+    <!-- Messages window -->
+    <div class="container">
+      <div class="row pt-3">
+        <div class="col" id="messages">
+          <!-- Messages from the script will be inserted here -->
+          <!-- e.g.:
+              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      User created
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                      </button>
+              </div>
+          -->
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Edit user modal window -->
+    <div class="modal" id="edit-user-modal" tabindex="-1" role="dialog" aria-labelledby="edit-user-modal"
+         aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <form class="modal-content" id="edit-user-form">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <div class="input-group-prepend">
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-light">
+            <th>Username</th>
+            <th>Bezeichnung</th>
+            <th>Ort</th>
+            </thead>
+            <tbody id="group-table-body-modal">
+            <tr>
+              <input type="hidden" aria-hidden="true" id="edit-id-input">
+            </tr>
+            <tr>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                            <span class="input-group-text"
+                                  style="background-color: #154734; color: white;  border-radius: initial;">Username</span>
+                </div>
+                <input type="text" aria-label="Username" placeholder="Username" class="form-control"
+                       id="edit-username-input" aria-describedby="span" aria-describedby="inputGroup-sizing-sm">
+              </div>
+            </tr>
+            <tr>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                            <span class="input-group-text"
+                                  style="background-color: #154734; color: white; border-radius: initial;">Art</span>
+                </div>
+                <input type="text" aria-label="Nutzerkategorie" placeholder="Nutzerkategorie"
+                       class="form-control"
+                       id="edit-nutzerkategorie-input">
+              </div>
+            </tr>
+            <tr>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                            <span class="input-group-text"
+                                  style="background-color: #154734; color: white; border-radius: initial;">Ort</span>
+                </div>
+                <input type="text" aria-label="Ort" placeholder="Ort" class="form-control"
+                       id="edit-ort-input">
+              </div>
+            </tr>
+
+
+            </tbody>
+          </table>
+
+          <div class="modal-footer">
+            <button type="submit" class="btns-modal2">Speichern</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+    <!--Beiträge: Niklas -->
+
+    <!-- Messages window -->
+    <div class="container">
+      <div class="row pt-3">
+        <div class="col" id="messagesBeitrag">
+        </div>
+      </div>
+    </div>
+
+    <p class="titel">Beiträge:</p>
+    <div class="row">
+      <div class="col-lg-2 col-md-2">
+
+      </div>
+
+      <!--    <div class="col-1">
+              <img id="greenBeitraege" class="grennscreen" src="bilder/aec1a5.png">
+          </div>-->
+      <div class="col-lg-4 col-md-4" style="background-color: #aec1a5; padding-top: 5px;">
+        <form id="formBeitraege">
+          <input class="input" type="search" id="searchBeitrag" placeholder="Suche">
+        </form>
+      </div>
+
+      <div class="col-lg-2 col-md-2" style="background-color: #aec1a5">
+        <div class="dropdownBeitrag1">
+          <button class="btn dropdown-toggle" style="color: black" type="button" id="dropdownMenuButtonBeitraege"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Alphabetisch Sortiert
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonBeitraege">
+            <a class="dropdown-item" href="#">von A-z</a>
+            <a class="dropdown-item" href="#">von Z-a</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-2" style="background-color: #aec1a5">
+        <div class="dropdownBeitrag2">
+          <button class="btn dropdown-toggle" style="color: black;" type="button" id="dropdownMenuButtonBeitraege1"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Nach Datum Sortiert
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButtonBeitraege1">
+            <a class="dropdown-item" href="#">Neuste zuerst</a>
+            <a class="dropdown-item" href="#">Älteste zuerst</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-8"></div>
+
+      <div class="col-lg-8 col-md-8 col-sm-8" style="background-color: #aec1a5">
+        <div class="scrollleiste frame p-2" style=" height: 15rem; width: 100%;">
+          <table class="tableBeiraege" style="width: 100%;">
+            <thead class="thead-light" style="color: black">
+            <tr>
+              <th scope="col">Beitragsname</th>
+              <th scope="col">ID</th>
+              <th scope="col">Kategorie</th>
+              <th scope="col">Erstelldatum</th>
+              <th scope="col">Ersteller</th>
+              <th scope="col">Aktion</th>
+            </tr>
+            </thead>
+            <tbody id="beitraege-table-body">
+            </tbody>
+          </table>
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <!--
+    &lt;!&ndash; Edit article modal window &ndash;&gt;
+    <div class="modal fade" id="edit-beitrag-modal" tabindex="-1" role="dialog" aria-labelledby="edit-beitrag-modal"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <form class="modal-content" id="edit-beitrag-form">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="edit-beitrag-modal-title"></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Edit BeitragID, Beitragsname, Kategorie, Erstelldatum und Ort</span>
+                        </div>
+                        <input type="hidden" aria-hidden="true" id="edit-beitragId-input">
+                        <input type="text" aria-label="Beitrag" placeholder="Beitrag" class="form-control"
+                               id="edit-beitrag-beitragsname-input">
+                        <input type="text" aria-label="Nutzerkategorie" placeholder="Nutzerkategorie" class="form-control"
+                               id="edit-beitrag-kategorie-input">
+                        <input type="text" aria-label="Erstelldatum" placeholder="Nutzerkategorie" class="form-control"
+                               id="edit-beitrag-datum-input">
+                        <input type="text" aria-label="Ersteller" placeholder="Ersteller" class="form-control"
+                               id="edit-beitrag-ersteller-input">
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <table class="table table-striped">
+                                <thead class="thead-light">
+                                </thead>
+                                <tbody id="group-beitragTable-body-modal">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btns-modal2">Speichern</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    -->
+
+
+    <!-- Edit user modal window -->
+    <div class="modal" id="edit-beitrag-modal" tabindex="-1" role="dialog" aria-labelledby="edit-beitrag-modal"
+         aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <form class="modal-content" id="edit-beitrag-form">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group">
+              <div class="input-group-prepend">
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped">
+            <thead class="thead-light">
+            <th>Beitragsname</th>
+            <th>Erstelldatum</th>
+            </thead>
+            <tbody id="group-table-body-modal1">
+            <tr>
+              <input type="hidden" aria-hidden="true" id="edit-beitragId-input">
+            </tr>
+            <tr>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                            <span class="input-group-text"
+                                  style="background-color: #154734; color: white;  border-radius: initial;">Titel</span>
+                </div>
+                <input type="text" aria-label="Beitragname" placeholder="...." class="form-control"
+                       id="edit-beitrag-beitragsname-input">
+              </div>
+            </tr>
+            <tr>
+              <div class="input-group input-group-sm mb-3">
+                <div class="input-group-prepend">
+                            <span class="input-group-text"
+                                  style="background-color: #154734; color: white; border-radius: initial;">Datum</span>
+                </div>
+                <input type="text" aria-label="Datum" placeholder="..." class="form-control"
+                       id="edit-beitrag-datum-input">
+              </div>
+            </tr>
+            <!--                <tr>
+                                <div class="input-group input-group-sm mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"
+                                              style="background-color: #154734; color: white; border-radius: initial;">Ort</span>
+                                    </div>
+                                    <input type="text" aria-label="Ort" placeholder="Ort" class="form-control"
+                                           id="edit-ort-input">
+                                </div>
+                            </tr>-->
+
+
+            </tbody>
+          </table>
+
+          <div class="modal-footer">
+            <button type="submit" class="btns-modal2">Speichern</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+</div>
+</div>

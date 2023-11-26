@@ -1,0 +1,29 @@
+<div id="spacearound">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2> Login</h2>
+        <hr>
+        <form [formGroup]="LoginInForm">
+          <div class="form-group"
+               [class.error]="LoginInForm.controls['username'].dirty && LoginInForm.hasError('required' , 'username')">
+            <small *ngIf="LoginInForm.controls['username'].dirty && LoginInForm.hasError('required' , 'username')"
+                   class="text-danger">Username is required</small>
+            <input formControlName="username" type="email" class="form-control " id="email" aria-describedby="emailHelp"
+                   placeholder="Username">
+          </div>
+          <small id="pmessage" *ngIf="LoginInForm.controls['password'].dirty && LoginInForm.hasError('required' , 'password')"
+                 class="text-danger">Password is required</small>
+          <div [class.error]="LoginInForm.controls['password'].dirty && LoginInForm.hasError('required', 'password')" class="input-group">
+            <input formControlName="password" [type]="type" class="form-control" id="loginpasswort" placeholder="Passwort">
+            <span (click)="showhide()" class="input-group-text" id="basic-addon2"><fa-icon id="faeye" [icon]="faEye"></fa-icon></span>
+          </div>
+          <button id="registerbutton" type="submit" class="btn btn-secondary button-button-container" (click)="LogIn()"> Jetzt Anmelden
+          </button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+

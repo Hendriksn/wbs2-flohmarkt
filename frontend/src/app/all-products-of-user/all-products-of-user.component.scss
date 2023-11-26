@@ -1,0 +1,42 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+button {
+  @include buttons;
+}
+
+body {
+  @include backgroundColor;
+}
+
+* {
+  font-family: $fonty;
+}
+$page-background-color: white;
+$body-background-color: white;
+// $background-color: #A770EF;
+$background-color: $maincolor;
+$image-height-gallery: 130px;
+
+
+body {
+  background: $page-background-color;
+}
+
+.banner {
+  background: $background-color;
+  // background: -webkit-linear-gradient(to right, $background-color, #cf8bf3, #fdb99b);
+  // background: linear-gradient(to right, $background-color, #cf8bf3, #fdb99b);
+}
+
+img {
+  height: $image-height-gallery;
+  object-fit: contain;
+}
+
+#backButton {
+  background-color: $background-color;
+  border-color: $background-color;
+
+}
+

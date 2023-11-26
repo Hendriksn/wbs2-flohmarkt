@@ -1,0 +1,21 @@
+<!-- iterates through all article of given user (see httpservice.ts) -->
+<!-- "renders" articles in a card-style -->
+<div style="margin: 0px" class="row">
+  <div class="mb-4">
+    <div class="bg-white rounded shadow-sm">
+      <img src="{{ httpServiceService.server+'/upload/article/'+article[0].picSource}}"
+           alt="" class="img-fluid card-img-top">
+      <div class="p-4">
+        <h5><a [routerLink]="['/productdetail/'+articleID]" class="text-dark">{{ article[0].name }}</a></h5>
+        <p class="small text-muted mb-0">{{ article[0].category }}</p>
+        <div style="background-color: #002878; color: white" class="d-flex align-items-center justify-content-between rounded px-3 py-2 mt-4">
+          <p class="small mb-0"><span
+            class="font-weight-bold" >{{ article[0].creationDate | date:'dd.MM.yy' }}</span>
+          </p>
+          <div class="px-3 rounded-pill font-weight-normal">{{ article[0].price }} €</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

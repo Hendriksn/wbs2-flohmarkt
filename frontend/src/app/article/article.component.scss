@@ -1,0 +1,22 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+button {
+  @include buttons;
+}
+
+body {
+  @include backgroundColor;
+
+}
+
+* {
+  font-family: $fonty;
+}
+
+$image-height-gallery: 130px;
+
+img {
+  height: $image-height-gallery;
+  object-fit: contain;
+}

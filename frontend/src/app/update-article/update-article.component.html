@@ -1,0 +1,88 @@
+<div id="spacearound">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Artikel ändern</h2>
+        <hr>
+        <form [formGroup]="articleForm">
+          <div class="form-group"
+               [class.error]="articleForm.controls['title'].dirty && articleForm.hasError('required' , 'title')">
+            <small *ngIf="articleForm.controls['title'].dirty && articleForm.hasError('required' , 'title')"
+                   class="text-danger">Name des Artikel</small>
+            <input [(ngModel)]="title" formControlName="title" type="text" class="form-control " id="registertitle"
+                   placeholder="Titel">
+          </div>
+          <div class="form-group"
+               [class.error]="articleForm.controls['description'].dirty && articleForm.hasError('required' , 'description')">
+            <small *ngIf="articleForm.controls['description'].dirty && articleForm.hasError('required' ,'description')"
+                   class="text-danger">Beschreibung</small>
+            <textarea [(ngModel)]="description" formControlName="description" type="text" class="form-control "
+                      id="registerdescription"
+                      placeholder="description"></textarea>
+          </div>
+          <div class="form-group"
+               [class.error]="articleForm.controls['price'].dirty && articleForm.hasError('required' , 'price')">
+            <small
+              *ngIf="articleForm.controls['price'].dirty && articleForm.hasError('required' ,'price')"
+              class="text-danger">Preis ändern</small>
+            <input [(ngModel)]="price" formControlName="price" type="text" class="form-control " id="registerprice"
+                   placeholder="price">
+          </div>
+
+          <div class="form-group"
+               [class.error]="articleForm.controls['negotiable'].dirty && articleForm.hasError('required' , 'price')">
+            <small
+              *ngIf="articleForm.controls['negotiable'].dirty && articleForm.hasError('required' ,'price')"
+              class="text-danger">Verhandelbar?</small>
+            <span>Verhandelbar?</span>
+            <ion-checkbox [(ngModel)]="negotiable" formControlName="price" type="text" id="registerprice"
+                          placeholder="price"></ion-checkbox>
+          </div>
+
+          <div class="form-group"
+               [class.error]="articleForm.controls['category'].dirty && articleForm.hasError('required' , 'category')">
+            <small *ngIf="articleForm.controls['category'].dirty && articleForm.hasError('required' , 'category')"
+                   class="text-danger">Verhandlungsbasis?</small>
+            <select [(ngModel)]="category" formControlName="category" type="select" class="form-control" id="category">
+              <option>Tiere</option>
+              <option>Autos</option>
+              <option>Technik</option>
+            </select>
+          </div>
+          <small id="pmessage"
+                 *ngIf="articleForm.controls['password'].dirty && articleForm.hasError('required' , 'password')"
+                 class="text-danger">Password is required</small>
+          <div class="input-group"
+               [class.error]="articleForm.controls['password'].dirty && articleForm.hasError('required' , 'password')">
+            <!--
+            <input formControlName="password" [type]="type" class="form-control" id="loginpasswort"
+                   placeholder="Passwort">
+                   -->
+          </div>
+        </form>
+
+        <button id="registerbutton" type="submit" class="btn button-button-container" (click)="updateArticle()">
+          Änderungen sichern
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #template c="close" let-d="dismiss" class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">INFO</h5>
+        <span type="button" class="btn-close" data-bs-dismiss="modal" (click)="d('Cross click')"></span>
+      </div>
+      <div class="modal-body">
+        <p>Ihre Anfrage zur Erstellung eines Verkäuferaccounts wird von den Admins geprüft. Sie von uns eine Mail,
+          sobald ihr Account freigeschaltet worden ist</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary-close" (click)="d('Cross click')" data-dismiss="modal">
+          Verstanden
+        </button>
+      </div>
+    </div>
+  </ng-template>
+</div>

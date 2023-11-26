@@ -1,0 +1,13 @@
+@mixin buttons(){
+    background-color: #CC6212;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    border-color: #A14E0E;
+    margin-top: 10px;
+    box-shadow: 0px 5px 5px rgba(89, 89, 89);
+}
+
+@mixin backgroundColor(){
+  background-color: white;
+}

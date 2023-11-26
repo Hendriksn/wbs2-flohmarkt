@@ -1,0 +1,20 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+
+
+
+.navbar.collapsed{
+  align-items: end;
+  justify-content: end;
+}
+
+#home{
+  margin-left: 40px;
+}
+
+nav {
+  background-color: $maincolor;
+  color: white;
+  font: $fonty;
+}

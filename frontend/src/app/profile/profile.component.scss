@@ -1,0 +1,75 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+button {
+  @include buttons;
+}
+body{
+  @include backgroundColor;
+  font-family: $fonty;
+}
+
+* {
+  font-family: $fonty;
+}
+
+$profile-background-color: #EEE;
+$profile-head-color: #002878;
+$profile-head-height: 200px;
+$profile-picture-width: 150px;
+$profile-picture-z-index: 1;
+$image-height-gallery: 130px;
+
+$profile-img-diameter: 150px;
+$profile-img-border-radius: 50%;
+$profile-img-background-color: #EEE;
+$profile-img-font-size: 76px;
+$profile-img-font-color: #aeb4b7;
+$profile-img-border-thickness: 5px;
+$profile-img-border-color: #FFF;
+
+
+.genericInitials {
+  width: $profile-img-diameter;
+  height: $profile-img-diameter;
+  border-radius: $profile-img-border-radius;
+  background-color: $profile-img-background-color;
+  display: inline-block;
+  font-size: $profile-img-font-size;
+  text-align: center;
+  color: $profile-img-font-color;
+  font-weight: bold;
+  line-height: $profile-img-diameter;
+  border: $profile-img-border-thickness solid $profile-img-border-color;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
+.profileBackground{
+  background: $profile-background-color;
+}
+
+.profile-head {
+  background-color:$profile-head-color;
+  height: $profile-head-height;
+}
+
+.profile-picture-index {
+  z-index: $profile-picture-z-index;
+}
+
+
+
+#profileImage {
+  width: $profile-picture-width;
+  height: $profile-picture-width;
+  border-radius: 50%;
+}
+
+
+
+img {
+  height: $image-height-gallery;
+  object-fit: contain;
+}

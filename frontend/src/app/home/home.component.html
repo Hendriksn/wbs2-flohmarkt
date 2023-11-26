@@ -1,0 +1,77 @@
+<app-footer></app-footer>
+<section id="showcase">
+  <div class="container">
+    <h1>Suche jetzt nach deinem neuen Lieblingsprodukt oder verkaufe selber deine Schätze!</h1>
+  </div>
+  <div class="container">
+    <form class="form-inline my-2 my-lg-0">
+      <input [(ngModel)]="searchQuery" (keyup)="searchArticles()" name="message"  class="form-control mr-sm-2" type="search" placeholder="Suche nach Produkten..." aria-label="Sea">
+      <p></p>
+      <button (click)="searchArticles()" class="btn btn-secondary" style="background-color: #CC6212; color: white; " type="submit">Suchen</button>
+    </form>
+  </div>
+
+</section>
+
+<!--httpService.server+'/upload/article/'+ article.picSource -->
+<section id="boxes" >
+
+  <div class="row justify-content-center">
+    <div  class="col-2"  *ngFor="let article of articles">
+      <div id="productdetail" class="card" >
+
+
+        <h5 [routerLink]="['/profil/'+article.sellerID]" class="card-header">{{users[article.sellerID].givenName}} {{users[article.sellerID].familyName}}</h5>
+        <div [routerLink]="['/productdetail/'+article.id]" id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img [routerLink]="['/productdetail/'+article.id]" class="d-block w-100" src="{{'http://localhost:3000/upload/article/'+article.picSource}}" alt="First slide">
+            </div>
+            <div class="carousel-item">
+              <img class="d-block w-100" src="https://img.freepik.com/fotos-kostenlos/schoenes-katzenportrait-hautnah_23-2149152114.jpg?w=996&t=st=1673341016~exp=1673341616~hmac=761fb993386ed740241903c46a4dd0a0f6da43f628cd92454e0cc8a7ae0843ce" alt="Second slide">
+            </div>
+          </div>
+          <a class="carousel-control-prev" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+          <a class="carousel-control-next" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only"></span>
+          </a>
+        </div>
+        <div class="col d-flex justify-content-center" >
+          <div class="card" style="width: 50rem; border: none">
+            <div class="card-body" id="cardBody">
+
+              <h5 [routerLink]="['/productdetail/'+article.id]" class="card-title">{{article.name}}</h5>
+              <h5 [routerLink]="['/productdetail/'+article.id]" id="classTitlePrice" class="card-title">{{ article.price }} € </h5>
+              <p [routerLink]="['/productdetail/'+article.id]" class="card-text" > {{article.location}}</p>
+              <p [routerLink]="['/productdetail/'+article.id]" class="card-text" >{{ article.creationDate | date:'dd.MM.yy' }}</p>            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--
+  <div class="container">
+    <div class="box">
+      <img src="https://img.ebay-kleinanzeigen.de/api/v1/prod-ads/images/57/579a0612-c5c7-4ffc-9a9a-1cce59484d9a?rule=$_59.JPG">
+      <h3>iPhone 13 512 GB Midnightblue</h3>
+      <p>800 € + Versand ab 6,99 €</p>
+    </div>
+    <div class="box">
+      <img src="https://img.ebay-kleinanzeigen.de/api/v1/prod-ads/images/57/579a0612-c5c7-4ffc-9a9a-1cce59484d9a?rule=$_59.JPG">
+      <h3>Great Deals</h3>
+      <p>Shop from a wide selection of items at discounted prices.</p>
+    </div>
+  </div>
+        -->
+</section>
+

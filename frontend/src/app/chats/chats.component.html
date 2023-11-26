@@ -1,0 +1,16 @@
+<section class="h-100 gradient-custom-2" style="justify-content: center; padding: 0px;
+margin-left: 50px">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col col-lg-9 col-xl-7">
+        <div class="card profileBackground">
+          <p>Chats</p>
+          <ul *ngFor="let chat of chats" class="list-group">
+            <li (click)="ClickOnChat(chat.id)" class="list-group-item">Chat {{chat.id}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

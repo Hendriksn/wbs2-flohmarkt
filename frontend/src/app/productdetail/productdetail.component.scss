@@ -1,0 +1,36 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+button {
+  @include buttons;
+}
+
+body {
+  @include backgroundColor;
+  font-family: $fonty;
+  text-align: center;
+}
+
+* {
+  font-family: $fonty;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+  text-align: center;
+}
+
+card-body{
+  justify-content: center;
+  border-color: white;
+  align:center
+}
+
+cardBody{
+  align: center;
+}
+
+#productdetail{
+  margin-top: 40px;
+}
+

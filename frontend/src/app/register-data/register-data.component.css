@@ -1,0 +1,47 @@
+input {
+  margin-bottom: 10px;
+  box-shadow: 0px 5px 5px rgb(89, 89, 89);
+}
+
+#content {
+  top: 100px;
+  justify-content: space-around;
+  display: flex;
+  position: relative;
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+#spacearound {
+  background: #ececec;
+  height: 100vh;
+}
+
+#benefists {
+  margin-left: 70px;
+}
+
+span {
+  box-shadow: 0px 5px 5px rgb(89, 89, 89);
+  height: 47px;
+}
+
+button {
+  background-color: #002878;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border-color: #002878;
+  margin-top: 10px;
+  box-shadow: 0px 5px 5px rgb(89, 89, 89);
+}
+
+fa-icon {
+  color: #86b817;
+}
+
+#faeye {
+  color: gray;
+}
+
+/*# sourceMappingURL=register-data.component.css.map */

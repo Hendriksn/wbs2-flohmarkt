@@ -1,0 +1,48 @@
+<div id="spacearound">
+  <div id="content" class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>Profil Bearbeiten</h2>
+        <hr>
+        <form [formGroup]="SignUpForm">
+          <div class="form-group"
+               [class.error]="SignUpForm.controls['givenName'].dirty && SignUpForm.hasError('required' , 'givenName')">
+            <small *ngIf="SignUpForm.controls['givenName'].dirty && SignUpForm.hasError('required' , 'givenName')"
+                   class="text-danger">Vorname is required</small>
+            <input [(ngModel)]="givenName" formControlName="givenName" type="text" class="form-control " id="registergivenname" placeholder="Vorname">
+
+          </div>
+          <div class="form-group"
+               [class.error]="SignUpForm.controls['familyName'].dirty && SignUpForm.hasError('required' , 'familyName')">
+            <small *ngIf="SignUpForm.controls['familyName'].dirty && SignUpForm.hasError('required' ,'familyName')"
+                   class="text-danger">Nachname is required</small>
+            <input [(ngModel)]="familyName" formControlName="familyName" type="text" class="form-control " id="registerfamilyName"
+                   placeholder="Nachname">
+
+          </div>
+          <div class="form-group"
+               [class.error]="SignUpForm.controls['telefonnummer'].dirty && SignUpForm.hasError('required' , 'telefonnummer')">
+            <small
+              *ngIf="SignUpForm.controls['telefonnummer'].dirty && SignUpForm.hasError('required' ,'telefonnummer')"
+              class="text-danger">Telefonnummer is required</small>
+            <input [(ngModel)]="telefonnummer" formControlName="telefonnummer" type="text" class="form-control " id="registertelefonnummer"
+                   placeholder="Telefonnummer">
+          </div>
+          <div class="form-group"
+               [class.error]="SignUpForm.controls['email'].dirty && SignUpForm.hasError('required' , 'email')">
+            <small *ngIf="SignUpForm.controls['email'].dirty && SignUpForm.hasError('required' , 'email')"
+                   class="text-danger">Email is required</small>
+            <input [(ngModel)]="email" formControlName="email" type="email" class="form-control " id="email" aria-describedby="emailHelp"
+                   placeholder="Email">
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input style="margin-left: -15px" (change)="handleFileInput($event)" type="file" class="form-control" id="pb">
+            </div>
+          </div>
+        </form>
+        <button id="registerbutton" type="submit" class="btn btn-secondary button-button-container" (click)="updateUser()">Änderungen sichern</button>
+      </div>
+    </div>
+  </div>
+</div>

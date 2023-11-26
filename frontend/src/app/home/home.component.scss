@@ -1,0 +1,78 @@
+.box {
+  width: 100%;
+  float: left;
+  margin: 5px;
+  padding: 0px;
+  justify-content: center;
+}
+.boxinhalt {
+  background-color: rgba(85,85,85,1);
+  padding: 20px;
+  margin: 10px;
+}
+img {
+  margin-top: 20px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#showcase {
+  background-color: rgba(0,40,120,.7);
+  color: #fff;
+  height: 300px;
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+#showcase h1 {
+
+  padding-top: 30px;
+  font-size: 35px;
+  //margin-top: 250px;
+  font-weight: bold;
+  color: white;
+}
+
+.card{
+  height: auto;
+  width: auto;
+
+}
+
+#showcase form {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#showcase input[type="text"] {
+  width: 100%;
+  border: none;
+  border-radius: 3px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 3px #ccc;
+  font-size: 16px;
+  text-align: center;
+  alignment: center;
+}
+
+#boxes .col-sm {
+  margin-top: 20px;
+}
+
+div.col-2{
+  margin-left: 55px;
+  margin-right: 55px;
+  margin-top: 40px;
+
+}
+
+img.d-block.w-100{
+  margin-top: 0px;
+  width: 50%;
+  height: 100px;
+  object-fit: cover;
+}

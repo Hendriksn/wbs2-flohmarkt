@@ -1,0 +1,18 @@
+@import "../../assets/main.scss";
+@import "../../assets/variables";
+
+button {
+  @include buttons;
+}
+
+body {
+  @include backgroundColor;
+}
+
+* {
+  font-family: $fonty;
+}
+
+
+
+
